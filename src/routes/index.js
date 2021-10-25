@@ -1,10 +1,10 @@
 const admin = require('firebase-admin')
 
-// var serviceAccount = require(process.env.GOOGLE_APPLICATIONS_CREDENTIALS);
+var serviceAccount = require('./node-fire-8c9b5-firebase-adminsdk-arohi-f3fa32463c.json');
 
 admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-    databaseURL: 'https://node-fb-b8170.firebaseio.com/'
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://node-fire-8c9b5-default-rtdb.firebaseio.com/'
 });
 
 const db = admin.database();
